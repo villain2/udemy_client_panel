@@ -20,7 +20,7 @@ export class AddClientComponent implements OnInit {
   };
 
   disableBalanceOnAdd: boolean = true;
-  @ViewChild('clientForm') form: any;
+  @ViewChild('clientForm', {static: false}) form: any;
 
   constructor(
     private flashMessage: FlashMessagesService,
@@ -49,7 +49,7 @@ export class AddClientComponent implements OnInit {
       this.flashMessage.show('New client added.', {
         cssClass: 'alert-success', timeout: 4000 });
       // redirect to dash
-      this.router.navigate(['/']).then(r => {});
+      this.router.navigate([`/`]);
 
     };
   }
