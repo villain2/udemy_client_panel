@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule} from '@angular/forms';
 
 // Firebase
 import { environment} from '../environments/environment';
@@ -46,7 +47,8 @@ import { ClientService} from './services/client.service';
         AppRoutingModule,
         AngularFireModule.initializeApp(environment.firebase, 'clientpanel'),
         AngularFirestoreModule,
-        AngularFireAuthModule
+        AngularFireAuthModule,
+        FormsModule
     ],
   providers: [ClientService],
   bootstrap: [AppComponent]
